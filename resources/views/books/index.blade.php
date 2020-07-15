@@ -14,8 +14,10 @@
     @unless($books->isEmpty())
         @foreach($books as $book)
             <li>
-                <h2>{{$book->name}}</h2>
-                <h4>{{$book->price}}</h4>
+                <a href={{ '/books/' . $book->id }}>
+                    <h2>{{ $book->name }}</h2>
+                </a>
+                <h4>{{ $book->price }}</h4>
             </li>
         @endforeach
 
