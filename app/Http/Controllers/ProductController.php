@@ -22,7 +22,8 @@ class ProductController extends Controller
         return view('products.show', compact('product'));
     }
 
-    public function store() {
-        dd('yes worked!');
+    public function store(Request $request) {
+        $product = Product::create($request->except('_token'));
+        dd($product);
     }
 }

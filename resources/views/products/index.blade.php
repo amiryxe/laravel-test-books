@@ -7,7 +7,7 @@
         @unless($products->isEmpty())
             @foreach($products as $product)
                 <li>
-                    <a href={{ '/books/' . $product->id }}>
+                    <a href={{ '/products/' . $product->id }}>
                         <h2>{{ $product->name }}</h2>
                     </a>
                     <h4>{{ $product->price }}</h4>

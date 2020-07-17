@@ -24,7 +24,7 @@
 
                 <div class="form-group">
                     <label for="description">Description</label>
-                    <input type="number" name="description" class="form-control" id="description">
+                    <input type="text" name="description" class="form-control" id="description">
                 </div>
 
                 <button type="submit" class="btn btn-success">Save</button>
