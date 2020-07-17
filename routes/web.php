@@ -19,3 +19,7 @@ Route::get('/', function () {
 
 Route::get('/books', 'BookController@index');
 Route::get('/books/{id}', 'BookController@show');
+
+Route::get('/products', 'ProductController@index');
+Route::get('/products/create', 'ProductController@create');
+Route::get('/products/{id}', 'ProductController@show');
