@@ -130,8 +130,8 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'description' => [
+            'required' => 'پرکردن مقدار توضیحات را فراموش نکنید!',
         ],
     ],
 
@@ -146,6 +146,11 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'name' => 'نام',
+        'price' => 'قیمت',
+        'weight' => 'وزن',
+        'description' => 'توضیحات',
+    ],
 
 ];
