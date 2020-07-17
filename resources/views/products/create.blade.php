@@ -5,25 +5,26 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-            <form>
+            <form method="POST" action={{route('products.store')}}>
+                {{csrf_field()}}
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="email" class="form-control" id="name" aria-describedby="emailHelp">
+                    <input type="text" name="name" class="form-control" id="name" aria-describedby="emailHelp">
                 </div>
 
                 <div class="form-group">
                     <label for="price">Price</label>
-                    <input type="number" class="form-control" id="price">
+                    <input type="number" name="price" class="form-control" id="price">
                 </div>
 
                 <div class="form-group">
                     <label for="weight">Weight</label>
-                    <input type="number" class="form-control" id="weight">
+                    <input type="number" name="weight" class="form-control" id="weight">
                 </div>
 
                 <div class="form-group">
                     <label for="description">Description</label>
-                    <input type="number" class="form-control" id="description">
+                    <input type="number" name="description" class="form-control" id="description">
                 </div>
 
                 <button type="submit" class="btn btn-success">Save</button>

@@ -21,4 +21,8 @@ class ProductController extends Controller
 
         return view('products.show', compact('product'));
     }
+
+    public function store() {
+        dd('yes worked!');
+    }
 }
