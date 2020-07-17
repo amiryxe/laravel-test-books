@@ -5,6 +5,8 @@
 @section('content')
     <div class="card">
         <div class="card-body">
+            @include('shared.errors')
+
             <form method="POST" action={{route('products.store')}}>
                 {{csrf_field()}}
                 <div class="form-group">
@@ -24,20 +26,9 @@
 
                 <div class="form-group">
                     <label for="description">Description</label>
-                    <input type="text" name="description" class="form-control" id="description" value="{{ old('description') }}">
+                    <input type="text" name="description" class="form-control" id="description"
+                           value="{{ old('description') }}">
                 </div>
-
-                @if($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach($errors->all() as $error)
-                                <li>
-                                    {{ $error }}
-                                </li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
 
                 <button type="submit" class="btn btn-success">Save</button>
             </form>
