@@ -23,6 +23,13 @@ class ProductController extends Controller
     }
 
     public function store(Request $request) {
+        $request->validate([
+            'name'          => 'required',
+            'price'         => 'required|numeric',
+            'weight'        => 'required|numeric',
+            'description'   => 'required',
+        ]);
+
         $product = Product::create($request->except('_token'));
         dd($product->toArray());
     }

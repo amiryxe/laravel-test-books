@@ -27,6 +27,18 @@
                     <input type="text" name="description" class="form-control" id="description">
                 </div>
 
+                @if($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach($errors->all() as $error)
+                                <li>
+                                    {{ $error }}
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
                 <button type="submit" class="btn btn-success">Save</button>
             </form>
         </div>
