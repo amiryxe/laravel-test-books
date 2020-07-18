@@ -3,6 +3,7 @@
 @section('title') Books list @endsection
 
 @section('content')
+    <a href="/books/create" class="btn btn-success">Create new book</a>
     <ul class="books-list">
         @unless($books->isEmpty())
             @foreach($books as $book)

@@ -7,7 +7,7 @@
         <div class="card-body">
             @include('shared.errors')
 
-            <form method="POST" action={{route('products.store')}}>
+            <form method="POST" action={{route('books.store')}}>
                 {{csrf_field()}}
                 <div class="form-group">
                     <label for="name">Name</label>
