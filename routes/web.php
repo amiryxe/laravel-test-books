@@ -19,7 +19,9 @@ Route::get('/', function () {
 });
 
 Route::get('/books', 'BookController@index');
+Route::get('/books/create', 'BookController@create');
 Route::get('/books/{id}', 'BookController@show');
+Route::post('/books', 'BookController@store')->name('books.store');
 
 Route::get('/products', 'ProductController@index');
 Route::get('/products/create', 'ProductController@create');
