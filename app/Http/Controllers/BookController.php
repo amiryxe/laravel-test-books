@@ -30,9 +30,9 @@ class BookController extends Controller
         $request->validate([
             'name'          => 'required|max:256',
             'price'         => 'required|numeric',
-            'ISBN'        => 'required|max:10|min:10',
-            'pages'   => 'required',
-            'published_at'   => 'required|date',
+            'ISBN'          => 'required|max:10|min:10',
+            'pages'         => 'required|numeric',
+            'published_at'  => 'required|date',
         ]);
 
         $book = Book::create($request->except('_token'));
