@@ -28,6 +28,9 @@ Route::get('/products/create', 'ProductController@create');
 Route::get('/products/{id}', 'ProductController@show');
 Route::post('/products', 'ProductController@store')->name('products.store');
 
+Route::get('/test/about', 'TestController@about');
+Route::get('/test/contact', 'TestController@contact');
+
 Route::get('test/{locale}', function ($locale){
     App::setLocale($locale);
     dd(__('messages.welcome'));
