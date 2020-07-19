@@ -30,7 +30,7 @@ return [
         'array' => 'The :attribute must have between :min and :max items.',
     ],
     'boolean' => 'The :attribute field must be true or false.',
-    'confirmed' => 'The :attribute confirmation does not match.',
+    'confirmed' => 'مقدار :attribute منطبق نیست.',
     'date' => 'مقدار :attribute یک تاریخ معتبر نیست.',
     'date_equals' => 'The :attribute must be a date equal to :date.',
     'date_format' => 'The :attribute does not match the format :format.',
@@ -93,7 +93,7 @@ return [
     'not_in' => 'The selected :attribute is invalid.',
     'not_regex' => 'The :attribute format is invalid.',
     'numeric' => 'مقدار :attribute باید حتما عدد باشد.',
-    'password' => 'The password is incorrect.',
+    'password' => 'گذرواژه درست نیست.',
     'present' => 'The :attribute field must be present.',
     'regex' => 'The :attribute format is invalid.',
     'required' => 'واردکردن مقدار :attribute الزامی است.',
@@ -154,6 +154,8 @@ return [
         'isbn' => 'شابک',
         'pages' => 'صفحات',
         'published_at' => 'تاریخ انتشار',
+        'national_code' => 'کد ملی',
+        'password' => 'گذرواژه',
     ],
 
 ];
