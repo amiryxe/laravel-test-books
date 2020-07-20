@@ -19,6 +19,11 @@
                 Description:
                 <b>{{$product->description}}</b>
             </p>
+
+            <p>
+                Creator:
+                <b>{{$product->user->name}}</b>
+            </p>
         </div>
     </div>
 
