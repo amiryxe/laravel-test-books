@@ -30,6 +30,15 @@
                            value="{{ old('description') }}">
                 </div>
 
+                <div class="form-group">
+                    <label for="categories">Category</label>
+                    <select name="category_id[]" id="categories" class="form-control" multiple>
+                        @foreach($categories as $category)
+                            <option value={{ $category->id }}>{{ $category->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+
                 <button type="submit" class="btn btn-success">Save</button>
             </form>
         </div>

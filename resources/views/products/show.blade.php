@@ -24,6 +24,14 @@
                 Creator:
                 <b>{{$product->user->name}}</b>
             </p>
+
+            <p>
+                Categories:
+
+                @foreach($product->categories as $category)
+                    <em>{{ $category->name . ',' }}</em>
+                @endforeach
+            </p>
         </div>
     </div>
 

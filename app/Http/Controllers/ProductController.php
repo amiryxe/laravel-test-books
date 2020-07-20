@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Http\Requests\StoreProduct;
 use App\Product;
 use Illuminate\Http\Request;
@@ -21,16 +22,12 @@ class ProductController extends Controller
     }
 
     public function create() {
-        return view('products.create');
+        $categories = Category::all();
+        return view('products.create', compact('categories'));
     }
 
     public function show($id) {
-        $product = Product::findOrFail($id);
-
-        foreach ($product->categories as $category){
-            dump($category->toArray());
-        }
-        dd();
+        $product = Product::with('categories')->findOrFail($id);
 
         return view('products.show', compact('product'));
     }
@@ -44,7 +41,8 @@ class ProductController extends Controller
         ]);*/
         $validated = $request->validated();
 
-        Auth::user()->products()->create($request->except('_token'));
+        $product = Auth::user()->products()->create($request->except('_token'));
+        $product->categories()->attach($request->get('category_id'));
 
         return redirect('/products');
     }
