@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreProduct;
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
@@ -36,8 +37,9 @@ class ProductController extends Controller
             'description'   => 'required',
         ]);*/
         $validated = $request->validated();
-        dd($validated);
-        $product = Product::create($request->except('_token'));
-        dd($product->toArray());
+
+        Auth::user()->products()->create($request->except('_token'));
+
+        return redirect('/products');
     }
 }
