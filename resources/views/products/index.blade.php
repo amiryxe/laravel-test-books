@@ -11,7 +11,8 @@
                     <a href={{ '/products/' . $product->id }}>
                         <h2>{{ $product->name }}</h2>
                     </a>
-                    <h4>{{ $product->price }}</h4>
+                    <h4>Price: {{ $product->price }}</h4>
+                    <h5 class="text-secondary">Creator: <span class="text-dark">{{ $product->user->name }}</span></h5>
                 </li>
             @endforeach
 
