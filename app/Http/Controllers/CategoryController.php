@@ -38,7 +38,7 @@ class CategoryController extends Controller
     {
         $category = Category::create($request->except('_token'));
 
-        dd($category);
+        return redirect('/products/categories');
     }
 
     /**
