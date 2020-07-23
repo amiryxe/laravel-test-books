@@ -28,6 +28,8 @@ Route::get('/products/create', 'ProductController@create');
 Route::get('/products/categories', 'CategoryController@index');
 Route::get('/products/categories/create', 'CategoryController@create')
     ->name('products.categories.create');
+Route::post('products/categories', 'CategoryController@store')
+    ->name('products.categories.store');
 Route::get('/products/{id}', 'ProductController@show');
 Route::post('/products', 'ProductController@store')->name('products.store');
 

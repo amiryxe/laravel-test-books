@@ -12,15 +12,19 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>
-                <button class="btn btn-info">Edit</button>
-                <button class="btn btn-danger">Delete</button>
-            </td>
-        </tr>
+
+        @foreach($categories as $category)
+            <tr>
+                <th scope="row">{{ $category->id }}</th>
+                <td>{{ $category->name }}</td>
+                <td>{{ '...' }}</td>
+                <td>
+                    <button class="btn btn-info">Edit</button>
+                    <button class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+        @endforeach
+
         </tbody>
     </table>
 
