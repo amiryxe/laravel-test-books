@@ -31,7 +31,10 @@ class ProductController extends Controller
     public function show($id)
     {
         $product = Product::with('categories')->findOrFail($id);
-        dd($product->toArray());
+        foreach ($product->categories as $category) {
+            dump($category->name);
+        }
+        dd();
         return view('products.show', compact('product'));
     }
 
