@@ -26,7 +26,8 @@ Route::post('/books', 'BookController@store')->name('books.store');
 Route::get('/products', 'ProductController@index');
 Route::get('/products/create', 'ProductController@create');
 Route::get('/products/categories', 'CategoryController@index');
-Route::get('/products/categories/create', 'CategoryController@create');
+Route::get('/products/categories/create', 'CategoryController@create')
+    ->name('products.categories.create');
 Route::get('/products/{id}', 'ProductController@show');
 Route::post('/products', 'ProductController@store')->name('products.store');
 
