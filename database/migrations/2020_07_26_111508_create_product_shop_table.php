@@ -15,7 +15,20 @@ class CreateProductShopTable extends Migration
     {
         Schema::create('product_shop', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('product_id');
+            $table->unsignedBigInteger('shop_id');
+            $table->integer('price');
             $table->timestamps();
+
+            $table->foreign('product_id')
+                ->references('id')
+                ->on('products')
+                ->onDelete('cascade');
+
+            $table->foreign('shop_id')
+                ->references('id')
+                ->on('shops')
+                ->onDelete('cascade');
         });
     }
 
